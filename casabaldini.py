@@ -60,7 +60,7 @@ class HelloWorld():
                pag="master"
            page = tmpl.render(pag=pag,products=Connect.products(""), target=kwargs,  manifestazione="blog", menu=Connect.menu(""), submenu=Connect.submnu(""),pagina=Connect.body("", "mugello"),  luogo = "mugello", urlx=cherrypy.url())
         
-        elif cherrypy.url() == 'http://incanto.carlozanieri.it/' :
+        elif cherrypy.url() == 'http://casabaldini.carlozanieri.it/' :
            tmpl = env.get_template('mytemplate.html')
            if kwargs :
                pag = kwargs['pag']
