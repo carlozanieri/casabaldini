@@ -15,7 +15,7 @@ class HelloWorld():
     def index(self,**kwargs):
         
           
-        if cherrypy.url() == 'http://carlozanieri.it/' :
+        if cherrypy.url() == 'http://casabaldini.it/' :
            tmpl = env.get_template('mytemplate.html')
            if kwargs :
                pag = kwargs['pag']
@@ -24,7 +24,7 @@ class HelloWorld():
                pag="blog"
            page = tmpl.render(pag=pag,products=Connect.products(""), target=kwargs,  manifestazione="blog", menu=Connect.menu(""), submenu=Connect.submnu(""),pagina=Connect.body("", "mugello"),  luogo = "mugello", urlx=cherrypy.url())
         
-        elif cherrypy.url() == 'http://web.carlozanieri.it/':
+        elif cherrypy.url() == 'http://web.casabaldini.it/':
             tmpl = env.get_template('carlozanieriweb.html')
 
             page= tmpl.render( products=Connect.products(""), blogs=Connect.blog(""), target='World',  menu=Connect.menu(""), submenu=Connect.submnu(""),pagina=Connect.body("", "index"),  luogo = "index")   
@@ -43,7 +43,7 @@ class HelloWorld():
                 pag="blog"
                 page = tmpl.render(pag=pag,products=Connect.products(""), target=kwargs,  manifestazione="blog", menu=Connect.menu(""), submenu=Connect.submnu(""),pagina=Connect.body("", "mugello"),  luogo = "mugello", urlx=cherrypy.url())
         
-        elif cherrypy.url() == 'carlozanieri.it' :
+        elif cherrypy.url() == 'casabaldini.it' :
            tmpl = env.get_template('mytemplate.html')
            if kwargs :
                 pag = kwargs['pag']
@@ -52,7 +52,7 @@ class HelloWorld():
            page = tmpl.render(pag=pag, products=Connect.products(""), target=kwargs,  manifestazione="blog", menu=Connect.menu(""), submenu=Connect.submnu(""),pagina=Connect.body("", "mugello"),  luogo = "mugello", urlx=cherrypy.url())
         
 
-        elif cherrypy.url() == 'http://carlozanieri.it/' :
+        elif cherrypy.url() == 'http://casabaldini.it/' :
            tmpl = env.get_template('mytemplate.html')
            if kwargs :
                 pag = kwargs['pag']
@@ -60,7 +60,7 @@ class HelloWorld():
                pag="master"
            page = tmpl.render(pag=pag,products=Connect.products(""), target=kwargs,  manifestazione="blog", menu=Connect.menu(""), submenu=Connect.submnu(""),pagina=Connect.body("", "mugello"),  luogo = "mugello", urlx=cherrypy.url())
         
-        elif cherrypy.url() == 'http://casabaldini.carlozanieri.it/' :
+        elif cherrypy.url() == 'http://casabaldini.casabaldini.it/' :
            tmpl = env.get_template('mytemplate.html')
            if kwargs :
                pag = kwargs['pag']
