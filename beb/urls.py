@@ -8,6 +8,7 @@ urlpatterns = [
     path("home", views.home, name="home"),
     path("<int:author_id>/", views.detail, name="detail"),
     path("slide", views.slide, name="slide"),
+    path("slide2", views.slide2, name="slide2"),
     path("blueslider", views.blueslider, name="blueslider"),
     path("blueslider2", views.blueslider2, name="blueslider2"),
     path("carousel", views.carousel, name="carousel"),
