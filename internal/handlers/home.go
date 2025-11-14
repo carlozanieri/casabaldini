@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"path/filepath"
 )
 
 type Slider struct {
@@ -26,10 +27,8 @@ type Link struct {
 	Link   string
 }
 
-var templates = template.Must(template.ParseGlob("templates/*.html"))
-
 func Home(w http.ResponseWriter, r *http.Request) {
-
+	templates := template.Must(template.ParseGlob(filepath.Join("templates", "*.html")))
 	rows, err := db.DB.Query("SELECT id, codice, codice2, img, titolo, caption, link, testo FROM beb_slider")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
