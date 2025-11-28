@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    "casabaldini.apps.CasabaldiniConfig",
+   # "casabaldini.apps.CasabaldiniConfig",
     "beb.apps.BebConfig",
     "django.contrib.admin",
     "django.contrib.auth",
