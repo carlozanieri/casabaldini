@@ -1,0 +1,1 @@
+/home/carlo/AreaComune/casabaldini/target/debug/casabaldini: /home/carlo/AreaComune/casabaldini/src/db.rs /home/carlo/AreaComune/casabaldini/src/main.rs /home/carlo/AreaComune/casabaldini/src/models.rs /home/carlo/AreaComune/casabaldini/src/routes.rs /home/carlo/AreaComune/casabaldini/src/ui/home.rs /home/carlo/AreaComune/casabaldini/src/ui/mod.rs

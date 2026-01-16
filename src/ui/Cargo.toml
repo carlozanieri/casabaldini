@@ -9,7 +9,7 @@ axum = "0.8.8"
 tower-http = { version = "0.6.8", features = ["fs"] }
 
 dioxus = { version = "0.7.2", features = ["ssr"] }
-dioxus-ssr = "0.7.2"
+
 
 serde = { version = "1", features = ["derive"] }
 

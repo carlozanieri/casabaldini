@@ -1,6 +1,4 @@
-use serde::Serialize;
-
-#[derive(Debug, Serialize, sqlx::FromRow)]
+#[derive(Debug, sqlx::FromRow, Clone, PartialEq)]
 pub struct Slider {
     pub id: i64,
     pub img: String,
