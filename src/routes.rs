@@ -1,27 +1,24 @@
-use axum::{
-    extract::State,
-    response::Html,
-};
+// src/routes.rs
+use axum::{response::Html, extract::State};
 use sqlx::SqlitePool;
-use dioxus::prelude::*;
-
 use crate::{models::Slider, ui::home::{Home, HomeProps}};
+use dioxus_ssr::render;
 
-pub async fn home(
-    State(pool): State<SqlitePool>,
-) -> Html<String> {
-    let sliders = sqlx::query_as::<_, Slider>(
+/// Handler per la home page
+pub async fn home(State(pool): State<SqlitePool>) -> Html<String> {
+    // Estrai gli sliders dal database
+    let sliders: Vec<Slider> = sqlx::query_as::<_, Slider>(
         "SELECT * FROM sliders ORDER BY id"
     )
     .fetch_all(&pool)
     .await
-    .unwrap();
+    .unwrap_or_default(); // se fallisce restituisce vettore vuoto
 
-    // 🔹 Dioxus 0.7 SSR corretto: passare props come struct
-    let mut vdom = dioxus::prelude::VirtualDom::new_with_props(Home, HomeProps { sliders });
-
-    // 🔹 Render SSR: Dioxus 0.7 usa render_vdom in crate dioxus_ssr
-    let html = dioxus_ssr::render(&mut vdom);
+    // Render SSR con Dioxus
+    let html = render(|cx| {
+        // Passiamo direttamente il componente e le props
+        Home(cx, HomeProps { sliders: sliders.clone() })
+    });
 
     Html(html)
 }

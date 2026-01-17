@@ -7,14 +7,24 @@ pub struct HomeProps {
 }
 
 #[component]
+#[component]
 pub fn Home(props: HomeProps) -> Element {
-    let sliders = &props.sliders;
-
     rsx! {
         div {
-            "Hello Slider",
-            // Qui puoi fare il mapping dei tuoi slider reali:
-            // sliders.iter().map(|s| rsx! { ... })
+            class: "slider-container",
+            "Benvenuto nella home",
+
+            for slider in props.sliders.iter() {
+                div {
+                    class: "slider-item",
+                    img {
+                        src: "{slider.img}",
+                        alt: "{slider.titolo}"
+                    }
+                    h3 { "{slider.titolo}" }
+                }
+            }
         }
     }
 }
+
